@@ -127,3 +127,7 @@ trainer.train()
 
 wandb.finish()
 model.config.use_cache = True
+
+#save model
+trainer.model.save_pretrained(new_model)
+trainer.model.push_to_hub(new_model, use_temp_dir=False)
